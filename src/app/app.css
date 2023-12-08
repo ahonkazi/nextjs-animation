@@ -6,7 +6,7 @@
 }
 
 .site-container {
-    @apply px-[100px];
+    @apply px-[60px];
 }
 
 .site-mt {

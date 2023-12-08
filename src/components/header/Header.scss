@@ -1,0 +1,14 @@
+header {
+    @apply duration-300;
+
+    &.header-sticky {
+        @apply sticky top-0 -translate-y-full;
+    }
+
+    &.header-scrolled {
+        @apply translate-y-0;
+    }
+
+
+
+}
