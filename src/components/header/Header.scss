@@ -9,6 +9,18 @@ header {
         @apply translate-y-0;
     }
 
+    .logo-small {
+        svg {
+            @apply h-8 lg:h-10;
+        }
+    }
 
+    &.header-big {
+        @apply py-[50px];
+    }
+
+    &.header-small {
+        @apply py-[30px];
+    }
 
 }

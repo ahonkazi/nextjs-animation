@@ -36,30 +36,42 @@ const Header = () => {
     const [headerScrolled, serHeaderScrolled] = useState(false)
     useEffect(() => {
         let currentScroll = 0;
-        if (headerRef !== null) {
+        if (headerRef !== null && logoRef !== null) {
             window.addEventListener('scroll', () => {
-                // if (window.scrollY > headerRef?.current.clientHeight) {
-                headerRef?.current.classList.add('header-sticky')
-                if (currentScroll > window.scrollY) {
-                    headerRef.current.classList.add('header-scrolled')
-                    serHeaderScrolled(true)
+                if (window.scrollY > headerRef.current.clientHeight) {
+                    headerRef?.current.classList.add('header-sticky')
+                    logoRef?.current.classList.add('logo-small')
+                    headerRef?.current.classList.add('logo-small')
+                    headerRef?.current.classList.remove('header-big')
+                    headerRef?.current.classList.add('header-small')
 
+                    if (currentScroll > window.scrollY) {
+                        headerRef.current.classList.add('header-scrolled')
+                        serHeaderScrolled(true)
+
+                    } else {
+                        headerRef.current.classList.remove('header-scrolled')
+                        serHeaderScrolled(false)
+
+                    }
+                    currentScroll = window.scrollY;
                 } else {
-                    headerRef.current.classList.remove('header-scrolled')
-                    serHeaderScrolled(false)
+                    logoRef?.current.classList.remove('logo-small')
+                    headerRef?.current.classList.add('header-big')
+                    headerRef?.current.classList.remove('header-small')
+
 
                 }
-                currentScroll = window.scrollY;
             })
         }
     }, [])
 
     return (
-        <header ref={headerRef} className='flex  bg-white py-[50px] justify-between site-container '>
+        <header ref={headerRef} className='flex  bg-white justify-between site-container '>
             <div onClick={() => themeContext.setMenuStatus(true)} className="">
                 <SlideText><span className='text-[24px]'>MENU</span></SlideText>
             </div>
-            <div onMouseEnter={logoEnter} onMouseLeave={logoLeave} ref={logoRef} data-color="#a6e2e3" className="[&>svg]:h-10 lg:[&>svg]:h-16  [&>svg]:duration-500 [&>svg]:ease-out [&>svg]:hover:h-20">
+            <div onMouseEnter={logoEnter} onMouseLeave={logoLeave} ref={logoRef} data-color="#a6e2e3" className="[&>svg]:h-10 lg:[&>svg]:h-16  [&>svg]:duration-500 [&>svg]:ease-out [&>svg]:hover:scale-150">
                 <MainLogo />
             </div>
             <div className="">
