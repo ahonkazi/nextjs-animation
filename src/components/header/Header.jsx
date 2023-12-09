@@ -67,7 +67,7 @@ const Header = () => {
     }, [])
 
     return (
-        <header ref={headerRef} className='flex  bg-white header-big justify-between site-container '>
+        <header ref={headerRef} className='flex  bg-white z-[50] header-big justify-between site-container '>
             <div onClick={() => themeContext.setMenuStatus(true)} className="">
                 <SlideText><span className='text-[24px]'>MENU</span></SlideText>
             </div>
