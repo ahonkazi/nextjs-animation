@@ -71,7 +71,7 @@ const Header = () => {
             <div onClick={() => themeContext.setMenuStatus(true)} className="">
                 <SlideText><span className='text-[24px]'>MENU</span></SlideText>
             </div>
-            <div onMouseEnter={logoEnter} onMouseLeave={logoLeave} ref={logoRef} data-color="#a6e2e3" className="[&>svg]:h-10 lg:[&>svg]:h-16   [&>svg]:duration-500 [&>svg]:ease-out [&>svg]:hover:scale-150">
+            <div onMouseEnter={logoEnter} onMouseLeave={logoLeave} ref={logoRef} data-color="#a6e2e3" className="[&>svg]:h-10 lg:[&>svg]:h-16   [&>svg]:duration-500 [&>svg]:ease-out">
                 <MainLogo />
             </div>
             <div className="">

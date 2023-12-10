@@ -7,6 +7,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        LoopLeft: 'loopTextLeft 4s linear infinite'
+      },
+      keyframes: {
+        loopTextLeft: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' },
+        }
+      },
       colors: {
         orange: '#ed7c50',
         darkOrange: '#d96d43',
@@ -21,6 +30,9 @@ module.exports = {
       },
       transitionProperty: {
         'height': 'height'
+      },
+      fontFamily: {
+        Nunito: 'Nunito'
       }
     },
   },
